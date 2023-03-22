@@ -12,7 +12,7 @@ with open(filename) as f:
     #json.dump(all_eq_data, f, indent=4) #'dump' takes a file object and a JSON data object and writes data to the file
     ##'indent = 4' arguement tells dump to format the data using indentation that matches the data's structure
     
-all_eq_dicts = all_eq_data['features'] #taking all the data associated with the key 'feaetures'
+all_eq_dicts = all_eq_data['features'] #taking all the data associated with the key 'features'
 
 
 mags, lons, lats, hover_texts = [], [], [], []
@@ -32,6 +32,7 @@ data = [{
 'type': 'scattergeo',
 'lon': lons,
 'lat': lats,
+'text': hover_texts,
 'marker': {
 'size': [5*mag for mag in mags],
 'color': mags,
